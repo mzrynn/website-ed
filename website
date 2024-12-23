@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Biography</title>
+
+    <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+        <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f8f9fa;
+            scroll-behavior: smooth;
+        }
+
+        /* Header */
+        /* Fullscreen Header with Background */
+        header {
+            height: 100vh;
+            background: url('bunga.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        /* Container for Layout */
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 80%; /* Control width of content */
+            max-width: 1200px;
+        }
+
+        /* Circular Profile Picture on the Left */
+        .profile-picture img {
+            width: 180px; /* Adjust size */
+            height: 180px;
+            border-radius: 50%; /* Circular Shape */
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Header Name on the Right */
+        .header-name h1 {
+            font-size: 3rem;
+            margin-left: 30px;
+            text-transform: uppercase;
+            font-family: 'Arial', sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: slideIn 4s ease-in-out, fadeIn 4s ease-in-out;
+        }
+
+        /* Animation for Sliding In and Fade-In */
+            @keyframes slideIn {
+        from {
+            transform: translateX(50px);
+            }
+            to {
+            transform: translateX(0);
+            }
+        }
+
+            @keyframes fadeIn {
+         from {
+            opacity: 0;
+            }
+            to {
+            opacity: 1;
+            }
+        }
+
+        /* Header with Background Image */
+            header {
+                height: 100vh; /* Full screen height */
+                background: url('gunung.jpg') no-repeat center center/cover; 
+                /* 'background.jpg' is the path to your image file */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white; /* Text color for contrast */
+            }     
+
+        /* Layout for the content */
+            .header-container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 80%;
+                max-width: 1200px;
+            }
+
+        /* Profile Picture Style */
+            .profile-picture img {
+                width: 250px;
+                height: 250px;
+                border-radius: 80%; /* Circle shape */
+                object-fit: cover;
+                border: 4px solid white;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            }
+
+        /* Header Name */
+            .header-name h1 {
+                font-size: 6.4rem;
+                margin-left: 30px;
+                text-align: center; /* Center the text */
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+
+            .header-name h1 span {
+                text-transform: capitalize; /* Capitalize only the first letter */
+            }
+
+            .header-name h1 .hello {
+                color: rgb(51, 5, 5); /* Color for "Hello" */
+            }
+
+            .header-name h1 .everyone {
+                color: white; /* Color for "Everyone" */
+            }
+            header h1 {
+                font-size: 8rem;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+
+            header p {
+                font-size: 1.5rem;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+            /* Navigation */
+            nav {
+                position: sticky;
+                top: 0;
+                background-color: rgba(61, 0, 15, 0.9);
+                z-index: 1000;
+            }
+
+            nav a {
+                color: white !important;
+                padding: 15px 20px;
+                font-weight: 600;
+                transition: all 0.3s;
+            }
+
+            nav a:hover {
+                background-color: #ffb3c1;
+                color: #3C0008 !important;
+            }
+
+            /* Section Styling */
+            section {
+                padding: 60px 20px;
+                text-align: center;
+            }
+
+            section h2 {
+                font-size: 2.5rem;
+                font-weight: 700;
+                margin-bottom: 20px;
+                color: #3C0008;
+                position: relative;
+            }
+
+            section h2::after {
+                content: "";
+                display: block;
+                width: 60px;
+                height: 4px;
+                background-color: #3C0008;
+                margin: 10px auto;
+            }
+
+            /* Card Styles */
+            .info-card {
+                background-color: #fff;
+                padding: 20px;
+                margin: 20px auto;
+                border: 1px solid #ddd;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+            }
+
+            .info-card:hover {
+                transform: translateY(-5px);
+            }
+
+            /* Gallery Section */
+            .gallery img {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+                transition: all 0.3s;
+            }
+
+            .gallery img:hover {
+                transform: scale(1.05);
+            }
+
+            /* Contact Section */
+            #contacts {
+                background-color: #f8f9fa;
+                padding: 60px 20px;
+            }
+
+            #contacts h2 {
+                color: #3C0008;
+                font-size: 2.8rem;
+                font-weight: 700;
+            }
+
+            #contacts p {
+                color: #555;
+                margin-bottom: 30px;
+                font-size: 1.1rem;
+            }
+
+            .social-links a {
+                margin: 10px;
+                color: #3C0008;
+                font-size: 1.8rem;
+                transition: color 0.3s;
+            }
+
+            .social-links a:hover {
+                color: #ffb3c1;
+            }
+
+            .form-control {
+                border: 2px solid #3C0008;
+                border-radius: 8px;
+                padding: 12px;
+                font-size: 1rem;
+            }
+
+            button {
+                background-color: #3C0008;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                padding: 10px 20px;
+                font-size: 1.1rem;
+                font-weight: 600;
+                transition: background 0.3s;
+            }
+
+            button:hover {
+                background-color: #3C0008;
+            }
+        /* Footer Container */
+        .footer-container {
+            background-color: #000000; /* Solid Black Background */
+            color: #FFFFFF; /* White Text */
+            text-align: center;
+            padding: 20px 10px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Footer Logo/Title */
+        .footer-logo h2 {
+            margin: 0;
+            font-size: 26px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #FFFFFF; /* White Title */
+        }
+
+        /* Footer Links */
+        .footer-links {
+            margin: 15px 0;
+        }
+
+        .footer-links a {
+            color: #FFFFFF; /* White Text */
+            text-decoration: none; /* Remove underline */
+            margin: 0 15px;
+            font-size: 14px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #AAAAAA; /* Light Gray on Hover */
+        }
+
+        /* Social Media Icons */
+        .footer-social a {
+            color: #FFFFFF; /* White Icons */
+            font-size: 20px;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: #AAAAAA; /* Light Gray on Hover */
+            transform: scale(1.1); /* Slight Zoom Effect */
+        }
+
+        /* Back to Top */
+        .back-to-top a {
+            color: #FFFFFF; /* White Text */
+            text-decoration: none; 
+            font-weight: bold;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .back-to-top a:hover {
+            color: #AAAAAA; /* Light Gray on Hover */
+        }
+
+        /* Footer Copyright */
+        .footer-copyright {
+            margin-top: 10px;
+        }
+
+        .footer-copyright p {
+            margin: 5px 0;
+            font-size: 12px;
+            color: #AAAAAA; /* Light Gray Text */
+        }
+        </style>
+</head>
+<body>
+        <!-- Header Section -->
+        <header>
+            <div class="header-container">
+        <!-- Profile Picture -->
+            <div class="profile-picture">
+                <img src="edreena.jpg" alt="Profile Picture">
+            </div>
+        <!-- Name -->
+            <div class="header-name">
+                <h1><span class="hello">Hello</span> <span class="everyone">Everyone!</span></h1>
+            <p>Welcome to my personal space where I share my journey, achievements, and passions.</p>
+            <br>
+            <a href="#about" class="btn btn-dark btn-lg px-4 rounded-pill">Discover More</a> 
+        </div>
+        </header>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #333333 ; position: fixed; width: 100%; top: 0; z-index: 100;">
+    <div class="container">
+        <a class="navbar-brand text-white" href="#">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#education">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#achievements">Achievements</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#gallery">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#contacts">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- About Me Section -->
+<section id="about" class="py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Image Section -->
+            <div class="col-md-5 text-center mb-4 mb-md-0">
+                <img src="edreena 4.jpg" alt="Mazreen's Photo" class="img-fluid rounded-circle shadow" style="max-width: 300px;">
+            </div>
+
+            <!-- Text Section -->
+            <div class="col-md-7">
+                <!-- Center the title -->
+                <h2 class="text-center mb-4">ABOUT ME</h2>
+
+                <!-- Biodata Section -->
+                <div class="border rounded p-4 bg-white shadow-sm">
+                    <h4 class="fw-bold" style="color: rgb(34, 33, 33);">Biodata</h4>
+                    <ul class="list-unstyled">
+                        <li><strong>Full Name:</strong> Dayang Edreena Safiya Binti Abang Zahirin Shah</li>
+                        <li><strong>Hometown:</strong> Kuching, Sarawak</li>
+                        <li><strong>Date of Birth:</strong> 25th October 2004</li>
+                        <li><strong>Hobby:</strong> Taking pictures</li>
+                        <li><strong>Things that i like:</strong> Coffee, Flower, Shopping, Cafe hunting</li>
+                        <li><strong>Favourite color:</strong> blue and green </li>
+                        <li><strong>Siblings:</strong> Second child of 3 siblings</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="education" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center text-uppercase fw-bold mb-4">Education Background</h2>
+        <div class="row">
+            <!-- Primary School -->
+            <div class="col-md-4">
+                <div class="info-card border rounded p-4 shadow-sm bg-white mb-4">
+                    <h4 class="fw-bold" style="color: #3C0008;">Primary School</h4>
+                    <p class="mb-1">Sekolah Kebangsaan Siol Kanan</p>
+                    <p class="text-muted">Kuching, Sarawak</p>
+                    <p class="text-muted">2010 - 2016</p>
+                    <ul class="list-unstyled">
+                        <li><span class="fw-bold">UPKK:</span> 2A, 2B, 2C</li>
+                        <li><span class="fw-bold">UPSR:</span> 2B, 4C</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- High School -->
+            <div class="col-md-4">
+                <div class="info-card border rounded p-4 shadow-sm bg-white mb-4">
+                    <h4 class="fw-bold" style="color: #3C0008;">High School</h4>
+                    <p class="mb-1">Sekolah Menengah Kebangsaan Semerah Padi</p>
+                    <p class="text-muted">Kuching, Sarawak</p>
+                    <p class="text-muted">2017 - 2022</p>
+                    <ul class="list-unstyled">
+                        <li><span class="fw-bold">PT3:</span> 2A, 3C, 4D</li>
+                        <li><span class="fw-bold">SPM:</span> 4B+, 3C+, 2D</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- University -->
+            <div class="col-md-4">
+                <div class="info-card border rounded p-4 shadow-sm bg-white mb-4">
+                    <h4 class="fw-bold" style="color: #3C0008;">University</h4>
+                    <p class="mb-1">Universiti Teknologi MARA (UiTM)</p>
+                    <p class="text-muted">Kampus Samarahan, Cawangan Sarawak</p>
+                    <p class="text-muted">2022 - Present</p>
+                    <ul class="list-unstyled">
+                        <li><span class="fw-bold">Current CGPA:</span> 3.34</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Achievements Section -->
+<section id="achievements">
+    <h2>ACHIEVEMENTS</h2>
+    <div class="container">
+        <div class="info-card">
+            <p><i class="fas fa-trophy"></i> Dean List Award, Semester 1 for Session 1 2022/2023</p>
+        </div>
+        <div class="info-card">
+            <p><i class="fas fa-certificate"></i> Successfully completed an internship at Sarawak Digital Economy Coorporation, Kuching, Sarawak.</p>
+    </div>
+</section>
+
+<!-- Gallery Section -->
+<section id="gallery" class="py-5">
+    <h2 class="text-center mb-4">GALLERY</h2>
+    <div id="carouselGallery" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="5" aria-label="Slide 6"></button>
+            <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="6" aria-label="Slide 7"></button>
+            <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="7" aria-label="Slide 8"></button>
+            <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="8" aria-label="Slide 9"></button>
+            <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="9" aria-label="Slide 10"></button>
+        </div>
+
+        <!-- Slides -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="reenareena.jpg" class="d-block mx-auto carousel-image" alt="Image 1">
+            </div>
+            <div class="carousel-item">
+                <img src="edreena2.jpg" class="d-block mx-auto carousel-image" alt="Image 2">
+            </div>
+            <div class="carousel-item">
+                <img src="edreena 9.jpg" class="d-block mx-auto carousel-image" alt="Image 3">
+            </div>
+            <div class="carousel-item">
+                <img src="safiya.jpg" class="d-block mx-auto carousel-image" alt="Image 4">
+            </div>
+            <div class="carousel-item">
+                <img src="edreena1.jpg" class="d-block mx-auto carousel-image" alt="Image 5">
+            </div>
+            <div class="carousel-item">
+                <img src="edreena3.jpg" class="d-block mx-auto carousel-image" alt="Image 6">
+            </div>
+            <div class="carousel-item">
+                <img src="edreenasafiya.jpg" class="d-block mx-auto carousel-image" alt="Image 7">
+            </div>
+            <div class="carousel-item">
+                <img src="edreena 10.jpg" class="d-block mx-auto carousel-image" alt="Image 8">
+            </div>
+            <div class="carousel-item">
+                <img src="edreena 11.jpg" class="d-block mx-auto carousel-image" alt="Image 9">
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselGallery" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselGallery" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <style>
+        /* Image Styling */
+        .carousel-item img {
+            width: 100%; /* Full width */
+            max-width: 384px; /* Limit width */
+            height: 384px; /* Set height */
+            object-fit: cover; /* Crop proportionally */
+            display: block;
+            margin: auto;
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+        #carouselGallery,
+        .carousel-inner,
+        .carousel-item,
+        .carousel-control-prev,
+        .carousel-control-next {
+            background-color: transparent !important; /* Ensure transparency */
+        }
+
+        /* Carousel Container Styling */
+        #carouselGallery {
+            max-width: 400px; /* Restrict width */
+            margin: 0 auto; /* Center the carousel */
+        }
+
+        /* Indicators Styling */
+        .carousel-indicators button {
+            background-color: #aaa; /* Light gray indicators */
+        }
+
+        .carousel-indicators .active {
+            background-color: #555; /* Darker gray for active indicator */
+        }
+
+        /* Control Icons */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: invert(100%); /* Make controls white for visibility */
+        }
+    </style>
+
+<br>
+<br>
+
+    <div class="container">
+        <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="dekan.jpg" class="card-img-top" alt="Gallery Image 1">
+                    <div class="card-body">
+                        <h5 class="card-title"> Dean List Award </h5>
+                        <p class="card-text">Dean List Certificate for Semester 1 Session 1 2022/2023.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="edreena 7.jpg" class="card-img-top" alt="Gallery Image 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Quality time with great company</h5>
+                        <p class="card-text">Chasing good vibes and great conversations at the cafe.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="edreena 5.jpg" class="card-img-top" alt="Gallery Image 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Showcasing my journey</h5>
+                        <p class="card-text">Presenting insights and experiences gained during my internship.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Video and Audio -->
+<section id="Video Clip & Favourite Song">
+    <center>
+    <h3>Video Clip & Favourite Song</h3>
+        <div class="video-container">
+            <video controls>
+                <source src="VIDEOCLIP.MOV" type="video/mp4">
+            </video>
+        </div>
+        
+        <div class="audio-container">
+            <p>Listen to my favorite songs:</p>
+            <audio controls>
+                <source src="serpihanchorus.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </center>
+</section>
+
+
+<!-- Contact Section -->
+<section id="contacts">
+    <h2>GET IN TOUCH</h2>
+    <p>Feel free to reach out via social media or send me a message below if you have any questions or potential collaborations. I’d love to hear from you!</p>
+    <div class="container mt-4">
+        <form>
+            <div class="mb-4">
+                <input type="text" class="form-control" placeholder="Your Name">
+            </div>
+            <div class="mb-4">
+                <input type="email" class="form-control" placeholder="Your Email">
+            </div>
+            <div class="mb-4">
+                <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+            </div>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <!-- Logo/Title -->
+        <div class="footer-logo">
+            <h2>WEBSITE BIOGRAPHY</h2>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="footer-links">
+            <a href="#education">Education</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="footer-social">
+            <a href="https://www.tiktok.com/@edrrna?_t=ZS-8sIL0n26cfo&_r=1" target="_blank" title="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://www.instagram.com/edrrna?igsh=aG8yandwZzRwNG1j" target="_blank" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/share/rXsPMjzbK3tEsmBu/?mibextid=wwXIfr" target="_blank" title="Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="mailto:2022285682@student.uitm.edu.my"><i class="fas fa-envelope"></i></a>
+            </a>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-copyright">
+            <p>&copy; 2024 Mazreen Mazriny. All rights reserved.</p>
+            <p>This website is develop to fulfill IMD318 Individual Assignment.</p>
+        </div>
+<br>
+        <!-- Back to Top -->
+        <div class="back-to-top">
+            <a href="#top" id="backToTop">Back to Top</a>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
